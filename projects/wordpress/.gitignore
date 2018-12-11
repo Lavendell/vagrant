@@ -1,5 +1,3 @@
 vars/mysql.yml
 *~
-.vagrant
-
-.vagrant/provisioners/ansible/inventory
+wordpress/.vagrant
