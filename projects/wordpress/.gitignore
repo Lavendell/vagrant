@@ -1,4 +1,4 @@
 vars/mysql.yml
 *~
 wordpress/.vagrant
-wordpress/.vagrant/provisioners
+
