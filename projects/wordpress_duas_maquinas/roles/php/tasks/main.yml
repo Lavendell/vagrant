@@ -1,0 +1,5 @@
+    - name: "instalar PHP"
+      apt: name=php5-fpm state=latest install_recommends=yes
+
+    - name: "Instalar extensões de mysql para php"
+      apt: name=php5-mysql state=latest install_recommends=yes
