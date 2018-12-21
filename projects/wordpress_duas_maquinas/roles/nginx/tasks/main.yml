@@ -1,5 +1,5 @@
     - name: "Atualizar pacotes e instalar nginx"
-      apt: name=nginx state=latest update_cache=yes install_recommends=yes
+      apt: name=nginx state=latest install_recommends=yes
 
     - name: "Copia configuração de blog.nginx para /etc/nginx/sites-available/blog"
       copy: src=templates/blog.nginx dest=/etc/nginx/sites-available/blog
