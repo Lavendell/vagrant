@@ -5,7 +5,7 @@
       service: name=mysql state=started enabled=true
 
     - name: "Cria .my.cnf"
-      template: src=my.cnf.j2 dest=~/.my.cnf mode=0600
+      template: src=my.cnf.j2 dest=/etc/mysql/my.cnf mode=0644
 
     - name: "Cria senha de root para root@mysql"
       mysql_user: name=root
@@ -44,3 +44,8 @@
         - "%"
         - ::1
         - localhost
+        
+    - name: "Reinicia o mysql"
+      service:
+        name: mysql
+        state: restarted

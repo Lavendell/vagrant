@@ -1,4 +1,4 @@
-    - name: "Atualizar pacotes e instalar nginx"
+    - name: "instala nginx"
       apt: name=nginx state=latest install_recommends=yes
 
     - name: "Copia configuração de blog.nginx para /etc/nginx/sites-available/blog"
@@ -11,4 +11,6 @@
       file: src=/etc/nginx/sites-available/blog dest=/etc/nginx/sites-enabled/blog state=link
 
     - name: "Reinicia o nginx"
-      shell: service nginx restart
+      service:
+        name: nginx
+        state: restarted
