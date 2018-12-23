@@ -8,8 +8,10 @@
       template: src=my.cnf.j2 dest=/etc/mysql/my.cnf mode=0644
 
     - name: "Cria senha de root para root@mysql"
-      mysql_user: name=root
+      mysql_user: name={{ mysql_root_user }}
               password="{{ mysql_root_password }}"
+              login_user="{{ mysql_root_user }}"
+              login_password="{{ mysql_root_old_password }}"
               check_implicit_admin=yes
               priv="*.*:ALL,GRANT"
               state=present
@@ -44,7 +46,7 @@
         - "%"
         - ::1
         - localhost
-        
+
     - name: "Reinicia o mysql"
       service:
         name: mysql

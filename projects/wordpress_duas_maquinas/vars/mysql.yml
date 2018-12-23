@@ -1,4 +1,6 @@
-- mysql_root_password: root
+- mysql_root_user: root
+- mysql_root_old_password: root
+- mysql_root_password: ganso123
 - mysql_wp_user: wordpress
 - mysql_wp_password: wordpress
 - wordpress_db_name: wordpress

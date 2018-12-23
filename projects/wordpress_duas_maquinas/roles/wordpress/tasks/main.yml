@@ -6,3 +6,6 @@
 
   - name: "Corrige permissões"
     file: path=/opt/wordpress recurse=yes owner=www-data group=www-data
+
+  - name: "Cria arquivo wp-config"
+    template: src=wp-config.j2.php dest=/opt/wordpress/wp-config.php mode=666
